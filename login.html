@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="icon" href="/assets/Blather.png"/>
+	<link rel="stylesheet" type="text/css" href="/assets/login.css"/>
+	<script type="text/javascript" src="/assets/login_validation.js"></script>
+</head>
+<body>
+	<div id="formbox">
+		<form action="/login.ejs" method="post" class="myform" onsubmit="return validate();">
+			<label for='user' class="labels"><h2><b>Username:</b></h2></label>
+			<input type='text' placeholder='Enter your username' name='username' id='user' class="text"/>
+	
+			<label for='p1' class="labels"><h2><b>Password:</b></h2></label>
+			<input type='password' placeholder='Enter your password' name='password' id='p1' class="text"/><br>
+
+			<input type="submit" value="Login" id="login_btn"/>
+			<input type="button" value="Signup" id="signup_btn" onClick="location.href='signup.html';"/>
+		</form>
+	</div>
+</body>
+</html>

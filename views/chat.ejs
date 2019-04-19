@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat</title>
+	<link rel="icon" href="/assets/Blather.png"/>
+	<script type="text/javascript" src="/assets/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="/assets/chatpage.js"></script>
+<style>
+#send_btn
+{
+	margin-top: 2px;
+	width: 8%;
+	height: 40px;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid 2px black;
+	background-color: blue;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+}
+</style>
+</head>
+<body>
+<div>
+<div style="background-color:#dfff80;width:78%;float:left;height:630px;border:solid black 3px;padding-left: 10px;overflow: scroll;">
+	<span id='cuser'><%=current_user%></span>>>><span id='ruser'><%=req_user%></span><br><br>
+<ul style="list-style: none;">
+<% for(var i=0;i<msgs.length;i++){ %>
+		<%if(msgs[i].by==current_user){%><li><h4 style='color:green'><%=msgs[i].message%></h4></li><%}else{%><li><h4 style='color:red'><%=msgs[i].message%></h4></li><%}%>
+		<%}%>
+</ul>
+</div>
+<div style="background-color:#ffff66;width:20%;float:right;height:682px;border:solid black 3px;">
+	<ul style="list-style:none;color:red;"><h3>
+		<li><h2><u>Other Users</u></h2></li>
+		<% for(var i=0;i<USERS.length;i++){%>
+		<%if(USERS[i].username!=current_user){%><li><a href='/chat/<%=current_user%>/<%=USERS[i].username%>'><%=USERS[i].username%></a></li><%}%>
+		<%}%></h3>
+	</ul>
+</div>
+</div>
+<footer>
+	<form>
+		<input type='text' name='message' style='height:30px;width:70%;border:4px solid black;'/>  <button id='send_btn' type='submit'">Send</button>
+	</form>
+</footer>
+</body>
+</html>

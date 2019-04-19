@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=data.username%></title>
+	<link rel="icon" href="/assets/Blather.png"/>
+</head>
+<body>
+<div>
+<div style="background-color:#dfff80;width:78%;float:left;height:682px;border:solid black 3px;padding-left: 10px;">
+<h1 style="color: #00cc00">Logged In Successfully</h1>
+<p>Welcome <%=data.username%></p>
+<p><a href='login.html'>Click here to go back to login page</a></p>
+</div>
+<div style="background-color:#ffff66;width:20%;float:right;height:682px;border:solid black 3px;">
+	<ul style="list-style: none;color:red;"><h3>
+		<li><h2><u>Other Users</u></h2></li>
+		<% for(var i=0;i<USERS.length;i++){%>
+		<%if(USERS[i].username!=data.username){%><li><a href='/chat/<%=data.username%>/<%=USERS[i].username%>'><%=USERS[i].username%></a></li><%}%>
+		<%}%></h3>
+	</ul>
+</div>
+</div>
+</body>
+</html>

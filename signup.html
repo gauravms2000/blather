@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+	<link rel="icon" href="/assets/Blather.png"/>
+	<link rel="stylesheet" type="text/css" href="/assets/signup.css"/>
+	<script type="text/javascript" src="/assets/signup_validation.js"></script>
+</head>
+<body>
+	<div id="formbox">
+		<form action="/signup.ejs" method="post" class="myform" onsubmit="return validate();">
+			<label for='user' class="labels"><h2><b>Username:</b></h2></label>
+			<input type='text' placeholder='Enter a username' name='username' id='user' class="text"/>
+	        
+			<label for='p1' class="labels"><h2><b>Password:</b></h2></label>
+			<input type='password' placeholder='Enter a password' name='password' id='p1' class="text"/>
+	
+			<label for='p2' class="labels"><h2><b>Confirm Password:</b></h2></label>
+			<input type='password' placeholder='Confirm password' name='cnfpassword' id='p2' class="text"/>
+	
+			<label for='email' class="labels"><h2><b>Email:</b></h2></label>
+			<input type='text' placeholder='Enter a valid Email-Id' name='email' id='email' class="text"/><br>
+
+			<input type="submit" value="Signup" id="submit_btn"/>
+			<input type="button" value="Back" id="back_btn" onClick="location.href='login.html';"/>
+		</form>
+	</div>
+</body>
+</html>
