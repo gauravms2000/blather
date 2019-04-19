@@ -135,5 +135,5 @@ app.post('/chatting',urlencodedParser,(req,res)=>{
 
 	res.json(req.body);
 });
-
-app.listen(3000);
+port =  process.env.PORT || 80;
+app.listen(port);
