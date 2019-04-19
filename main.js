@@ -56,7 +56,7 @@ app.get('/login_failed',(req,res)=>{
 });
 
 app.post('/signup.ejs',urlencodedParser,(req,res)=>{
-	mongoose.connect('mongodb://localhost:27017/blather', {useNewUrlParser: true});
+	mongoose.connect('mongodb+srv://blather_2019:blather_2019@cluster0-imiwt.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 	var users=mongoose.model('users',schema);
 	data=req.body;
 	var user=users({username:data.username,password:data.password,email:data.email}).save((err)=>{
@@ -67,7 +67,7 @@ app.post('/signup.ejs',urlencodedParser,(req,res)=>{
 });
 
 app.post('/login.ejs',urlencodedParser,(req,res)=>{
-	mongoose.connect('mongodb://localhost:27017/blather', {useNewUrlParser: true});
+	mongoose.connect('mongodb+srv://blather_2019:blather_2019@cluster0-imiwt.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 	var users=mongoose.model('users',schema);
 	login_data=req.body;
 	users.findOne({username:login_data.username,password:login_data.password},(err,user)=>{
@@ -89,7 +89,7 @@ app.get('/chat/:cuser/:ruser',(req,res)=>{
 	var msgCollection;
 	//var allMsg;
 	console.log(chatWith);
-	mongoose.connect('mongodb://localhost:27017/blather', {useNewUrlParser: true});
+	mongoose.connect('mongodb+srv://blather_2019:blather_2019@cluster0-imiwt.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
 	if(current_user.localeCompare(chatWith)==-1)
 	{
@@ -117,7 +117,7 @@ app.post('/chatting',urlencodedParser,(req,res)=>{
 	var msgCollection;
 	var MSG=req.body.MSG;
 	console.log('In chatting');
-	mongoose.connect('mongodb://localhost:27017/blather', {useNewUrlParser: true});
+	mongoose.connect('mongodb+srv://blather_2019:blather_2019@cluster0-imiwt.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
 	if(current_user.localeCompare(chatWith)==-1)
 	{
